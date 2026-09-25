@@ -1,9 +1,8 @@
-import React from 'react'
+import Login from "@/components/templates/Login";
+import React from "react";
 
 function login() {
-  return (
-    <div>login</div>
-  )
+  return <Login />;
 }
 
-export default login
+export default login;

@@ -1,0 +1,146 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--text);
+}
+.theme {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.containerBox {
+  background-color: var(--forground);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  border: 1px solid var(--border);
+  padding: 30px;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 63px;
+}
+
+.containerBox h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.containerBox img {
+  width: 80px;
+  height: 84px;
+  margin-top: 51px;
+}
+
+.containerBox a {
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 19px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 53px;
+  border: none;
+  background: var(--background);
+  padding: 22px 15px;
+  border-radius: 15px;
+  font-family: "vazirmatn";
+  color: var(--text);
+}
+
+.form p {
+  color: var(--red);
+  padding: 8px;
+}
+.form input:focus-visible {
+  outline: 2px var(--primary) solid;
+}
+.form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form button {
+  font-family: "vazirmatn";
+  width: 400px;
+  height: 53px;
+  background-color: var(--btn-color);
+  color: var(--forground);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.form button:hover {
+  background-color: var(--primary);
+}
+
+.password {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.password div {
+  position: absolute;
+  left: 12px;
+  top: 40%;
+  cursor: pointer;
+  color: #333333be;
+}
+
+.validation {
+  max-height: 300px;
+  font-size: 18px;
+  background-color: var(--background);
+  border-radius: 15px;
+  padding: 12px 20px;
+  list-style: none;
+  margin: 5px 0 0 0;
+  width: 400px;
+  box-sizing: border-box;
+  margin-top: 10px !important;
+  padding: 5px !important;
+}
+
+.validation li {
+  font-size: 14px;
+  padding: 3px 8px !important;
+}
+
+.validation li .undefine {
+  color: #22c55e !important;
+}
+
+.validation li.invalid svg {
+  color: #ef4444 !important;
+}
+
+.validation li svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
