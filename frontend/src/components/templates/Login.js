@@ -76,7 +76,7 @@ function Login() {
               {errors.password && <p>{errors.password.message}</p>}
             </div>
 
-            {error && <p>Invalid username or password.</p>}
+            {error && <p>نام کاربری یا رمز عبور اشتباه است.</p>}
             <button type="submit" disabled={isLoading}>
               {isLoading ? "درحال ورود..." : "ورود"}
             </button>

@@ -150,8 +150,7 @@ function RegistreTemplate() {
           </div>
           {(registerError || loginError) && (
             <p>
-              {registerError?.response.data.message ||
-                loginError?.response.data.message}
+              کاربر مورد نظر موجود است
             </p>
           )}
           <button type="submit" disabled={isLoading || !isPasswordValid}>
