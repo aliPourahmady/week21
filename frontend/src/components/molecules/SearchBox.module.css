@@ -1,0 +1,31 @@
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--forground);
+  width: 280px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+.searchBox input {
+  color: var(--text);
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .searchBox {
+    width: 140px;
+  }
+}

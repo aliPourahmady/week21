@@ -1,0 +1,47 @@
+.td {
+  padding: 16px 52px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text);
+}
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.btn img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+}
+.btn img:hover {
+  opacity: 1;
+}
+
+.btn input[type="checkbox"] {
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.1s ease-in;
+}
+.btn input[type="checkbox"]:checked {
+  background-color: var(--primary);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1200px) {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}

@@ -1,17 +1,18 @@
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useLogin } from "@/services/mutation";
 import { loginSchema } from "@/schemas/AuthSchema";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import logo from "../../assets/Union.svg";
-import { setToken } from "@/services/cookie";
+import { isAuth, setToken } from "@/services/cookie";
 import styles from "./Login.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import ThemeToggle from "../molecules/ThemeToggle";
 
 function Login() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,6 +26,11 @@ function Login() {
     resolver: yupResolver(loginSchema),
     defaultValues: { username: "", password: "" },
   });
+  useEffect(() => {
+    if (isAuth()) {
+      router.push("/dashboard");
+    }
+  }, []);
 
   const { mutate, isLoading, error } = useLogin();
 
@@ -45,7 +51,7 @@ function Login() {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.theme}>{/* <ThemeToggle /> */}</div>
+        <div className={styles.theme}>{<ThemeToggle />}</div>
         <div className={styles.containerBox}>
           <div className={styles.header}>
             <Image src={logo} alt="logo" />

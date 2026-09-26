@@ -1,0 +1,101 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--backdrop);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--forground);
+  border-radius: 30px;
+  padding: 30px 36px;
+}
+.content p {
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form .input {
+  display: flex;
+  flex-direction: column;
+}
+.form div label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form div input {
+  color: var(--text);
+  margin-top: 6px;
+  border: none;
+  background-color: var(--input);
+  border-radius: 8px;
+  appearance: none;
+  width: 389px;
+  height: 42px;
+  padding: 8px;
+}
+.form div input::-webkit-outer-spin-button,
+.form div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form div input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form input:focus-visible {
+  outline: 2px var(--primary) solid;
+}
+.form .input p {
+  margin-top: 10px;
+  color: var(--red);
+  font-size: 15px;
+  font-weight: 200;
+}
+.form .btn {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  margin-top: 40px;
+}
+.btn button {
+  border: none;
+  padding: 10px 40px;
+  flex: 1;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+}
+.btn button:first-child {
+  color: var(--forground);
+  background-color: var(--btn-color);
+  transition: all 0.3s ease-in-out;
+}
+.btn button:first-child:hover {
+  background-color: var(--primary);
+}
+.btn button:last-child {
+  font-weight: 400;
+}
+.error {
+  color: var(--red);
+  font-size: 10px;
+}

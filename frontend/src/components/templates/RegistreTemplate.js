@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ReactPasswordChecklist from "react-password-checklist";
@@ -8,12 +8,13 @@ import { IoClose } from "react-icons/io5";
 import { useLogin, useRegister } from "@/services/mutation";
 import { registerSchema } from "@/schemas/AuthSchema";
 import logo from "../../assets/Union.svg";
-import { setToken } from "@/services/cookie";
+import { isAuth, setToken } from "@/services/cookie";
 
 import styles from "./RegisterTemplate.module.css";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "../molecules/ThemeToggle";
 
 function RegistreTemplate() {
   const router = useRouter();
@@ -40,6 +41,12 @@ function RegistreTemplate() {
     isLoading: isLoggingIn,
     error: loginError,
   } = useLogin();
+
+  useEffect(() => {
+    if (isAuth()) {
+      router.push("/dashboard");
+    }
+  }, []);
 
   const onSubmit = (formData) => {
     const { confirmPassword, ...registrationData } = formData;
@@ -81,7 +88,7 @@ function RegistreTemplate() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.theme}>{/* <ThemeToggle /> */}</div>
+      <div className={styles.theme}>{ <ThemeToggle /> }</div>
       <div className={styles.containerBox}>
         <div className={styles.header}>
           <Image src={logo} alt="logo" />

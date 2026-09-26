@@ -1,0 +1,87 @@
+.content {
+  margin: 0 150px;
+  overflow: hidden;
+  padding-top: 28px;
+  color: var(--text);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: var(--forground);
+  border: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.user {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.account h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.account p {
+  font-size: 12px;
+  color: var(--text);
+  opacity: 0.5;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+.line {
+  width: 2px;
+  height: 32px;
+  background-color: var(--border);
+  flex-shrink: 0;
+}
+
+.logout {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--red);
+  opacity: 0.8;
+  transition: all 0.1s ease-in;
+}
+
+.logout:hover {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    margin: 0 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    margin: 0 16px;
+  }
+  .header {
+    padding: 8px;
+  }
+  .account {
+    display: none;
+  }
+}

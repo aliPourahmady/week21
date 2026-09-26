@@ -17,7 +17,7 @@ const useProducts = ({
       if (maxPrice) params.maxPrice = maxPrice;
 
       try {
-        const res = await api.get("/product", { params });
+        const res = await api.get("/products", { params });
         return res.data;
       } catch (err) {
         if (err.response?.status == 400) {
